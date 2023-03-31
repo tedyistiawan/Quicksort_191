@@ -43,38 +43,38 @@ void swap(int x, int y)
 void q_short(int low, int high)
 {
 	int pivot, i, j;
-	if (low > high)                                                 // Langkah algoritma No. 1
+	if (low > high)                                                 // Langkah ke 1
 		return;
 
 	// Partition the list into two parts:
 	// One containing element less that or equal to privat
 	// Outher containing elements greater than pivot
 
-	pivot = arr[low];                                               // Langkah algoritma No. 2
+	pivot = arr[low]; // Langkah ke 2
 
-	i = low + 1;                                                    // Langkah algoritma No. 3
-	j = high;                                                       // Langkah algoritma No. 4
+	i = low + 1; // Langkah ke 3
+	j = high;  // Langkah ke 4
 
 
-	while (i <= j)                                                  // Langkah algoritma No. 10
+	while (i <= j) // Langkah ke 10
 	{
 		// search for an element greather than pivot
-		while ((arr[i] <= pivot) && (i <= high))                    // Langkah algoritma No. 5
+		while ((arr[i] <= pivot) && (i <= high)) // Langkah ke 5
 		{
-			i++;                                                    // Langkah algoritma No. 6
+			i++; // Langkah ke 6
 			cmp_count++;
 		}
 		cmp_count++;
 
 		// search for an element less than or equal to pivot
-		while ((arr[j] > pivot) && (j >= low))                       // Langkah algoritma No. 7
+		while ((arr[j] > pivot) && (j >= low))                       // Langkah ke 7
 		{
-			j--;                                                     // Langkah algoritma No. 8
+			j--; // Langkah ke 8
 			cmp_count++;
 		}
 		cmp_count++;
 		// if the greater element is on the left of the element
-		if (i < j)                                                          // Langkah algoritma No. 9
+		if (i < j) // Langkah ke 9
 		{
 			// swap the element at index i with the element at index j
 			swap(i, j);
@@ -83,17 +83,17 @@ void q_short(int low, int high)
 	}
 
 	// j now containt the index of the last element in the sorted list
-	if (low < j)                                                            // Langkah algoritma No. 11
+	if (low < j) // Langkah ke 11
 	{
 		// move the pivot to its correct position in the list
 		swap(low, j);
 		mov_count++;
 	}
 	// sort the list on the left pivot using quick sort
-	q_short(low, j - 1);                                                    // Langkah algoritma No. 12
+	q_short(low, j - 1); // Langkah ke 12
 
 	// Sort the list on the right of pivot using quick sort
-	q_short(j + 1, high);                                                   // Langkah algoritma No. 13 
+	q_short(j + 1, high); // Langkah ke 13 
 
 }
 
