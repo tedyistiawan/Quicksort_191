@@ -30,6 +30,15 @@ void input() {
 	}
 }
 
+//swaps elements st index with the element at index
+void swap(int x, int y)
+{
+	int temp;
+
+	temp = arr[x];
+	arr[x] = arr[y];
+	arr[y] = temp;
+}
 
 
 
